@@ -62,14 +62,14 @@ def give_lesson(module_gpoi, module_audio, learnt_dict, lesson):
     for alphabet in lesson:
         module_gpoi.print_alphabet(alphabet)
         module_audio.say(alphabet)
-        response = module_audio.recognize_word()
+        response, status = module_audio.recognize_alphabet()
         
         if(response == alphabet):
             module_audio.say("Correct Answer")
             learnt_dict[alphabet] = True
         else:
             module_audio.say("Wrong answer. Try Again.")
-            new_response = module_audio.recognize_word()
+            new_response = module_audio.recognize_alphabet()
             if(new_response == alphabet):
                 module_audio.say("Correct Answer")
                 learnt_dict[alphabet] = True

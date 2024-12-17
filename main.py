@@ -14,15 +14,18 @@ def main():
     while(True):
         module_audio.say("Choose a mode: Learn, Test or Exit.")
         mode = module_audio.recognize_word();
+        
         module_progress.save_progress(mistake_dict=mistake_dict, learnt_dict=learnt_dict, tested_dict=tested_dict, PROGRESS_FILE=PROGRESS_FILE)
         
-        if mode == 'learn':
+        print(mode)
+        
+        if mode == ('learn', True):
             mode_learn.run_learn_mode(module_gpoi=module_gpio, module_audio=module_audio, mistake_dict=mistake_dict, learnt_dict=learnt_dict)
         
-        elif mode == 'test':
+        elif mode == ('test', True):
             mode_test.run_test_mode(module_gpoi=module_gpio, module_audio=module_audio, mistake_dict=mistake_dict, learnt_dict=learnt_dict, tested_dict=tested_dict)
         
-        elif mode == 'exit':
+        elif mode == ('exit', True):
             break;
         
         else:

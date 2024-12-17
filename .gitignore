@@ -1,4 +1,5 @@
 __pycache__/
 venv/
-barille-buddy/
+braille-buddy
 recc_alphabet.py
+recc_word.py

@@ -1,4 +1,3 @@
-# from mode_learn import get_prev_mistakes
 import mode_learn
 
 
@@ -27,7 +26,7 @@ def get_untested(learnt_dict, tested_dict, count):
 def take_test(module_gpoi, module_audio, mistake_dict, tested_dict, test):
     for alphabet in test:
         module_gpoi.print_alphabet(alphabet)
-        response = module_audio.recognize_word()
+        response, status = module_audio.recognize_alphabet()
         if(response == alphabet):
             if mistake_dict[alphabet] > 0:
                 mistake_dict[alphabet] -= 1
@@ -36,7 +35,7 @@ def take_test(module_gpoi, module_audio, mistake_dict, tested_dict, test):
 
         else:
             module_audio.say("Wrong answer. Try Again.")
-            new_response = module_audio.recognize_word()
+            new_response = module_audio.recognize_alphabet()
             if(new_response == alphabet):
                 tested_dict[alphabet] = True
                 module_audio.say("Correct Answer")
