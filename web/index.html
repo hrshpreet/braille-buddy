@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Keyboard Progress</title>
+</head>
+<body>
+
+
+    <nav class="navbar">
+        <div class="container">
+          <h1 class="logo">Braille Buddy</h1>
+          <p class="tagline">A Smart Braille Tutor System</p>
+        </div>
+      </nav>
+
+
+
+  <div id="keyboard">
+    <div class="row">
+      <div class="key">q</div>
+      <div class="key">w</div>
+      <div class="key">e</div>
+      <div class="key">r</div>
+      <div class="key">t</div>
+      <div class="key">y</div>
+      <div class="key">u</div>
+      <div class="key">i</div>
+      <div class="key">o</div>
+      <div class="key">p</div>
+    </div>
+    <div class="row">
+      <div class="key">a</div>
+      <div class="key">s</div>
+      <div class="key">d</div>
+      <div class="key">f</div>
+      <div class="key">g</div>
+      <div class="key">h</div>
+      <div class="key">j</div>
+      <div class="key">k</div>
+      <div class="key">l</div>
+    </div>
+    <div class="row">
+      <div class="key">z</div>
+      <div class="key">x</div>
+      <div class="key">c</div>
+      <div class="key">v</div>
+      <div class="key">b</div>
+      <div class="key">n</div>
+      <div class="key">m</div>
+    </div>
+
+    <div class="color-legend">
+        Colors: Light Green - Learnt and Tested, Lime - Learnt but Not Tested, Red - Most Mistakes
+      </div>
+  </div>
+
+
+
+  <section id="statistics-ribbon" class="ribbon">
+    <div class="stat-item">
+      <h3 id="letters-learnt">0</h3>
+      <p>Letters Learnt</p>
+    </div>
+    <div class="stat-item">
+      <h3 id="letters-tested">0</h3>
+      <p>Letters Tested</p>
+    </div>
+    <div class="stat-item">
+      <h3 id="total-mistakes">0</h3>
+      <p>Total Mistakes</p>
+    </div>
+  </section>
+
+
+
+
+
+  <section class="summary">
+    <div class="summary-item">
+      <h2>Letter with Most Mistakes</h2>
+      <p id="most-mistakes">N/A</p>
+    </div>
+    <div class="summary-item">
+      <h2>Latest Learnt Alphabets</h2>
+      <p id="latest-learnt">N/A</p>
+    </div>
+    <div class="summary-item">
+      <h2>Most Tested Alphabet</h2>
+      <p id="most-tested">N/A</p>
+    </div>
+    <div class="summary-item">
+      <h2>Total Letters Practiced</h2>
+      <p id="total-practiced">0</p>
+    </div>
+    <div class="summary-item">
+      <h2>Strong Letters</h2>
+      <p id="strong-letters">N/A</p>
+    </div>
+  </section>
+  
+
+
+
+
+  <section id="details-section">
+    <h2>Table of Details</h2>
+    <table id="progress-table">
+      <thead>
+        <tr>
+          <th onclick="sortTable(0)">Letter</th>
+          <th onclick="sortTable(1)">Learnt</th>
+          <th onclick="sortTable(2)">Tested</th>
+          <th onclick="sortTable(3)">Mistakes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Table rows will be dynamically inserted here -->
+      </tbody>
+    </table>
+    <div id="focus-suggestion">
+      <p>Focus on <span id="weak-letter">N/A</span> to improve your progress!</p>
+    </div>
+  </section>
+  
+
+
+  <script src="script.js"></script>
+</body>
+</html>
